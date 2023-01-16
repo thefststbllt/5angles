@@ -1,0 +1,97 @@
+.basket {
+  @media (max-width: $vp-tablet) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.basket__title {
+  font-weight: 400;
+  margin: 0 20px 0 0;
+  font-size: 2.5rem;
+  line-height: 1.05em;
+  @include fix-text(389px);
+
+  @media (max-width: $vp-mobile) {
+    font-weight: 400;
+    font-size: 1.75rem;
+    line-height: 1.07em;
+    margin: 0 0 10px;
+    @include fix-text(100%);
+  }
+}
+
+.basket__title-wrapper {
+  display: flex;
+  align-items: flex-end;
+
+  @media (max-width: $vp-tablet) {
+    margin: 0 0 10px;
+  }
+
+  @media (max-width: $vp-mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+  }
+}
+
+.basket__info-title {
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1.07em;
+
+  @media (max-width: $vp-mobile) {
+    max-width: 70%;
+    font-size: 1.5rem;
+    line-height: 1.25em;
+  }
+}
+
+.basket__account-question {
+  font-size: 0.875rem;
+  line-height: 1.125em;
+  color: $color-dark-grey;
+
+  a {
+    color: $color-basic-black;
+    text-decoration: none;
+    margin: 0 0 0 5px;
+    transition: .3s all;
+
+    &:hover {
+      color: $color-success-green;
+      transition: .3s all;
+    }
+  }
+
+  @media (max-width: $vp-tablet) {
+    margin-left: auto;
+  }
+
+  @media (max-width: $vp-mobile) {
+    margin: 0;
+  }
+}
+
+.basket__container {
+  max-width: 758px;
+  margin: 60px 0 0;
+
+  @media (max-width: $vp-tablet) {
+    margin: 0;
+    max-width: none;
+  }
+
+  @media (max-width: $vp-mobile) {
+    margin: 34px 0 0;
+  }
+}
+
+.basket__user-purchases {
+  margin: 29px 0 40px;
+
+  @media (max-width: $vp-mobile) {
+    margin: 20px 0 15px;
+  }
+}

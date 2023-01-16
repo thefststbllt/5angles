@@ -1,0 +1,47 @@
+.breadcrumbs {
+  display: flex;
+  align-items: baseline;
+  max-width: 80%;
+}
+
+.breadcrumbs__item {
+  display: flex;
+  &:not(:first-child) {
+
+    &::before {
+      @include pseudoel;
+      content: '/';
+      font-size: 0.75rem;
+      line-height: 1.25em;
+      color: $color-dark-grey;
+      margin: 0 10px;
+    }
+  }
+}
+
+.breadcrumbs__link {
+  font-size: 0.75rem;
+  line-height: 1.25em;
+  color: $color-dark-grey;
+  text-decoration: none;
+  transition: .3s all;
+  max-height: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  @include fix-text(25vw);
+
+  &:hover {
+    color: $color-basic-black;
+    transition: .3s all;
+  }
+
+  &--current {
+    color: $color-basic-black;
+    cursor: default;
+  }
+
+  @media (max-width: $vp-mobile) {
+    @include fix-text(40vw);
+  }
+}

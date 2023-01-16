@@ -1,0 +1,258 @@
+.purchase-item {
+  padding: 25px 25px 23px 0;
+  display: grid;
+  grid-template-columns: 355px 1fr;
+  position: relative;
+
+  &--empty-basket &__inner-content {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.3em;
+    grid-column: 1/-1;
+    justify-self: center;
+  }
+
+  @media (max-width: $vp-mobile) {
+    grid-template-columns: min-content 1fr;
+    padding: 16px 0;
+  }
+}
+
+.purchase-item__main-info {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+
+  @media (max-width: $vp-mobile) {
+    grid-column: 1/-1;
+    column-gap: 12px;
+  }
+}
+
+.purchase-item__price-wrapper {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  column-gap: 30px;
+  max-width: 371px;
+  min-width: 315px;
+  height: max-content;
+  margin: 0 5px 0 auto;
+
+  @media (max-width: $vp-mobile) {
+    column-gap: 8px;
+    width: 100%;
+    max-width: none;
+    min-width: auto;
+    grid-column: 1/-1;
+    margin: 0;
+  }
+}
+
+.purchase-item__item-price,
+.purchase-item__total-price {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2em;
+  margin: 2px 0 0;
+  display: flex;
+  align-items: center;
+  max-width: 80px;
+  word-wrap: break-word;
+
+  @media (max-width: $vp-mobile) {
+    font-size: 1rem;
+    line-height: 1.3em;
+    max-width: 65px;
+    margin: 21px 0 0 auto;
+  }
+}
+
+.purchase-item__total-price {
+  justify-self: end;
+}
+
+.purchase-item__item-price[data-old-price],
+.purchase-item__total-price[data-old-total] {
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    color: $color-dark-grey;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.25em;
+    text-decoration: line-through;
+  }
+}
+
+.purchase-item__item-price[data-old-price] {
+  &::before {
+    content: attr(data-old-price);
+  }
+}
+
+.purchase-item__total-price[data-old-total] {
+  &::before {
+    content: attr(data-old-total);
+  }
+}
+
+.purchase-item picture {
+  grid-area: 1/1/6/2;
+  margin-right: 20px;
+
+  @media (max-width: $vp-mobile) {
+    grid-area: 1/1/2/2;
+    margin: 0;
+    min-width: 90px;
+    height: 111px;
+  }
+}
+
+.purchase-item__title {
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.2em;
+  margin: 0 0 15px;
+  @include fix-text(205px);
+
+  @media (max-width: $vp-mobile) {
+    font-size: 0.875rem;
+    line-height: 1.3em;
+    max-width: 160px;
+  }
+}
+
+.purchase-item__spec {
+  font-size: 0.75rem;
+  line-height: 1.25em;
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $vp-mobile) {
+    grid-column: 1/-1;
+
+    &:first-of-type {
+      margin: 8px 0 0;
+    }
+
+    &:not(:first-of-type) {
+      margin: 4px 0 0;
+    }
+  }
+}
+
+.purchase-item__key {
+  color: $color-dark-grey;
+  @include fix-text(200px);
+}
+
+.purchase-item__value {
+  margin-left: 5px;
+  @include fix-text(200px);
+
+  @media (max-width: $vp-mobile) {
+    margin: 0 0 0 2px;
+  }
+}
+
+.purchase-item__size-list {
+  margin: 0 0 10px;
+
+  @media (max-width: $vp-mobile) {
+    grid-column: 1/-1;
+    margin: 16px 0 0;
+  }
+}
+
+.purchase-item__color-list {
+  @media (max-width: $vp-mobile) {
+    grid-column: 1/-1;
+    margin: 15px 0 0;
+  }
+}
+
+.purchase-item__quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 133px;
+  height: max-content;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: $color-light-grey;
+
+  label {
+    height: max-content;
+  }
+
+  input[type=number] {
+    width: 69px;
+    text-align: center;
+    background-color: $color-light-grey;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  @media (max-width: $vp-mobile) {
+    width: 134px;
+    padding: 5px 6px;
+    margin: 18px auto 0;
+  }
+}
+
+.purchase-item__quantity-button {
+  min-width: 32px;
+  height: 32px;
+  border: none;
+  z-index: 1;
+  cursor: pointer;
+  transition: .3s all;
+  position: relative;
+
+  &::before,
+  &::after {
+    @include pseudoel;
+    width: 12px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: $color-basic-black;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: calc(50% - 6px);
+  }
+
+  &:hover {
+    @include hover-effect;
+  }
+
+  &:disabled {
+    background-color: $color-light-grey;
+    cursor: default;
+
+    &::before,
+    &::after {
+      background-color: $color-grey;
+    }
+    @include hover-effect-disabled;
+  }
+
+  &--plus {
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.purchase-item__item-delete {
+  position: absolute;
+  top: 26px;
+  right: -2px;
+
+  @media (max-width: $vp-mobile) {
+    top: 17px;
+    right: 0;
+  }
+}

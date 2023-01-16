@@ -1,0 +1,9 @@
+.navigation {
+  @media (max-width: $vp-tablet) {
+    width: calc(100% + 50px);
+  }
+
+  @media (max-width: $vp-mobile) {
+    width: 100%;
+  }
+}

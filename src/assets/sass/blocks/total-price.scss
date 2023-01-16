@@ -1,0 +1,28 @@
+.total-price {
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.07em;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 17px;
+
+  @media (max-width: $vp-mobile) {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    padding: 15px 0 8px;
+  }
+}
+
+.total-price__key {
+  @media (max-width: $vp-mobile) {
+    @include fix-text(125px);
+  }
+}
+
+.total-price__value {
+  margin: 3px 2px 0 0;
+
+  @media (max-width: $vp-mobile) {
+    margin: 0;
+  }
+}

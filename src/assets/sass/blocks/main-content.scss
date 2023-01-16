@@ -1,0 +1,33 @@
+.main-content__container {
+  padding: 51px 0 73px;
+  margin: 0 auto;
+
+  @media (max-width: $vp-tablet) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @media (max-width: $vp-mobile) {
+    padding: 25px 16px 38px;
+  }
+}
+
+.main-content__form {
+  margin: 40px 0 0;
+  position: relative;
+  min-height: 1593px;
+
+  @media (max-width: $vp-tablet) {
+    min-height: auto;
+  }
+
+  @media (max-width: $vp-mobile) {
+    margin-top: 32px;
+  }
+}
+
+.main-content__breadcrumbs {
+  @media (max-width: $vp-mobile) {
+    margin-top: -2px;
+  }
+}

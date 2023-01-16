@@ -1,0 +1,80 @@
+.overall-list {
+  padding: 0 0 16px;
+
+  @media (max-width: $vp-mobile) {
+    padding: 0 0 8px;
+  }
+}
+
+.overall-list__item {
+  font-size: 1.25rem;
+  line-height: 1.25em;
+  display: flex;
+  justify-content: space-between;
+
+  &--discount {
+    font-size: 1rem;
+    line-height: 1.31em;
+    margin: 0 0 8px;
+
+    .overall-list__item-value {
+      color: $color-error-red;
+      font-weight: 400;
+    }
+  }
+
+  &--discount-main {
+    font-size: 1.25rem;
+    .overall-list__item-value {
+      font-weight: 700;
+    }
+  }
+
+  &:first-child {
+    margin: 0 0 19px;
+  }
+
+  &:last-child {
+    margin: 21px 0 0;
+
+    .overall-list__item-value {
+      margin: -3px 1px 0 0px;
+    }
+  }
+
+  @media (max-width: $vp-mobile) {
+    font-size: 1rem;
+    line-height: 1.3em;
+
+    &:first-child {
+      margin: 0 0 13px;
+    }
+
+    &--discount {
+      font-size: 0.75rem;
+      line-height: 1.25em;
+    }
+
+    &--discount-main {
+      font-size: 1rem;
+    }
+
+    &:last-child {
+      margin: 14px 0 0;
+    }
+  }
+}
+
+.overall-list__item-key {
+  display: block;
+  max-width: 50%;
+  word-wrap: break-word;
+}
+
+.overall-list__item-value {
+  font-weight: 700;
+}
+
+.rouble-sign {
+  font-family: 'Arial', sans-serif;
+}

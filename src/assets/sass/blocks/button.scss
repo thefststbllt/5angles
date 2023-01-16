@@ -1,0 +1,24 @@
+.button {
+  color: $color-basic-white;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.31em;
+  padding: 15px;
+  background-color: $color-basic-black;
+  border: none;
+  cursor: pointer;
+
+  @include hover-effect;
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &:disabled {
+    color: $color-dark-grey;
+    background-color: $color-grey;
+    transform: scale(1);
+    transition: none;
+    cursor: default;
+    @include hover-effect-disabled;
+  }
+}

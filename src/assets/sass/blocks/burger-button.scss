@@ -1,0 +1,38 @@
+.burger-button {
+  @media (max-width: $vp-mobile) {
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    position: relative;
+
+    &::before,
+    &::after {
+      @include pseudoel;
+      height: 1.5px;
+      background-color: $color-basic-black;
+      position: absolute;
+      right: 0;
+      transition: .3s all;
+    }
+
+    &::before {
+      width: 100%;
+      top: 14px;
+    }
+
+    &::after {
+      width: 56%;
+      bottom: 9px;
+    }
+
+    &--close {
+      &::before,
+      &::after {
+        width: 100%;
+        transition: .3s all;
+      }
+    }
+  }
+}

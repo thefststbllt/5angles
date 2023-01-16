@@ -1,0 +1,35 @@
+//Global
+@import '../../libs/normalize';
+@import 'global/variables';
+@import 'global/container';
+@import 'global/utils';
+@import 'global/mixins';
+
+//Blocks
+@import 'blocks/page';
+@import 'blocks/main-header';
+@import 'blocks/main-content';
+@import 'blocks/navigation';
+@import 'blocks/navigation-list';
+@import 'blocks/user-menu';
+@import 'blocks/breadcrumbs';
+@import 'blocks/basket';
+@import 'blocks/user-purchases';
+@import 'blocks/purchase-item';
+@import 'blocks/user-contacts';
+@import 'blocks/size-list';
+@import 'blocks/color-list';
+@import 'blocks/overall';
+@import 'blocks/overall-list';
+@import 'blocks/total-price';
+@import 'blocks/payment';
+@import 'blocks/payment-list';
+@import 'blocks/order-comment';
+@import 'blocks/destination-map';
+
+//UI
+@import 'blocks/button';
+@import 'blocks/burger-button';
+@import 'blocks/delete-button';
+@import 'blocks/delete-message';
+@import 'blocks/success-message';

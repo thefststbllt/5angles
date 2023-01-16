@@ -1,0 +1,25 @@
+.payment {
+  margin: 37px 0 0;
+
+  @media (max-width: $vp-tablet) {
+    order: 1;
+  }
+
+  @media (max-width: $vp-mobile) {
+    margin: 45px 0 0;
+  }
+}
+
+.payment__title {
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1.07em;
+  margin-bottom: 30px;
+  @include fix-text(100%);
+
+  @media (max-width: $vp-mobile) {
+    font-size: 1.5rem;
+    line-height: 1.25em;
+    margin-bottom: 22px;
+  }
+}

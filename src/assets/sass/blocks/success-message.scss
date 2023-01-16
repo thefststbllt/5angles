@@ -1,0 +1,38 @@
+.success-message {
+  position: absolute;
+  width: calc(100% - 20vw);
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10vw;
+  z-index: 4;
+  transition: .3s all;
+
+  &__inner-content {
+    font-size: 2.5rem;
+    line-height: 1.3em;
+    text-align: center;
+    color: $color-basic-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 3px double $color-success-green;
+    margin: auto;
+    padding: 10vw;
+    width: 55vw;
+    min-height: 50vh;
+    cursor: pointer;
+  }
+
+  @media (max-width: $vp-mobile) {
+    min-height: 50vh;
+    padding: 30vw 10vw;
+
+    &__inner-content {
+      font-size: 1.2rem;
+      margin: auto auto 0;
+      position: absolute;
+      bottom: 80vh;
+    }
+  }
+}

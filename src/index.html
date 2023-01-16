@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>5 Angles Test Page</title>
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=034cb49f-bc83-4a84-af04-2877ca2a0fa5&lang=ru_RU"></script>
+    </head>
+    <body>
+        <div class="page wrapper">
+            <header class="page__header main-header">
+                <div class="main-header__container container">
+                    <nav class="main-header__navigation navigation">
+                        <ul class="navigation__list navigation-list">
+                            <li class="navigation-list__item">
+                                <a href="#" class="navigation-list__link">Каталог</a>
+                            </li>
+                            <li class="navigation-list__item">
+                                <a href="#" class="navigation-list__link">О компании</a>
+                            </li>
+                            <li class="navigation-list__item">
+                                <a href="#" class="navigation-list__link">Магазины</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a class="main-header__logo-link" href="#">
+                        <img class="main-header__logo" src="assets/img/icons/logo.svg" alt="Логотип">
+                    </a>
+                    <ul class="main-header__user-menu user-menu">
+                        <li class="user-menu__item">
+                            <a class="user-menu__link" href="#">
+                                <span class="visually-hidden">Поиск</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.6031 14.6031L18.2857 18.2857" stroke="black" stroke-linejoin="round"/>
+                                    <path d="M16.4444 9.07927C16.4444 13.1469 13.147 16.4443 9.07933 16.4443C5.01173 16.4443 1.71429 13.1469 1.71429 9.07927C1.71429 5.01167 5.01173 1.71423 9.07933 1.71423C13.147 1.71423 16.4444 5.01167 16.4444 9.07927Z"
+                                          stroke="black"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="user-menu__item">
+                            <a class="user-menu__link" href="#">
+                                <span class="visually-hidden">Войти</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.8062 7.51997C15.8062 10.7586 13.1822 13.3263 9.92902 13.3263C6.67585 13.3263 4.05188 10.7586 4.05188 7.51997C4.05188 4.27411 6.68317 1.64282 9.92902 1.64282C13.1749 1.64282 15.8062 4.27411 15.8062 7.51997Z"
+                                          stroke="black"/>
+                                    <path d="M1.14282 19.0743V19.0743C4.96511 12.061 15.0348 12.061 18.8571 19.0743V19.0743"
+                                          stroke="black"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="user-menu__item">
+                            <a class="user-menu__link user-menu__link--favourites" href="#" data-items-count="8">
+                                <span class="visually-hidden">Избранное</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.9089 10.8218L10.0077 17.7143L3.10649 10.8218C2.65129 10.3751 2.29274 9.83824 2.05341 9.24495C1.81409 8.65166 1.69917 8.01483 1.71589 7.37456C1.73261 6.73429 1.88062 6.10444 2.15059 5.52468C2.42056 4.94492 2.80664 4.42782 3.28453 4.00592C3.76241 3.58402 4.32175 3.26648 4.92731 3.07328C5.53287 2.88008 6.17154 2.81541 6.80311 2.88335C7.43467 2.95129 8.04544 3.15036 8.59696 3.46803C9.14848 3.7857 9.6288 4.21509 10.0077 4.72915C10.3882 4.21882 10.8691 3.79319 11.4202 3.47889C11.9714 3.16459 12.5809 2.96839 13.2107 2.90258C13.8405 2.83676 14.477 2.90274 15.0803 3.09639C15.6836 3.29004 16.2409 3.60719 16.7171 4.02799C17.1933 4.44879 17.5782 4.96418 17.8478 5.5419C18.1174 6.11962 18.2659 6.74725 18.2839 7.38549C18.3019 8.02373 18.189 8.65884 17.9524 9.25109C17.7159 9.84333 17.3606 10.38 16.9089 10.8274"
+                                          stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="user-menu__item user-menu__item--basket">
+                            <a class="user-menu__link user-menu__link--basket" href="#" data-items-count="4">
+                                <span class="visually-hidden">Корзина</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.85717 4.62496C7.4353 0.73571 13.034 0.752281 13.7143 4.62496M17.4184 6.3396L18.8334 15.4385C18.8782 15.7265 18.8595 16.0206 18.7787 16.3008C18.6979 16.581 18.5568 16.8406 18.3652 17.0618C18.1736 17.283 17.9359 17.4606 17.6684 17.5825C17.401 17.7043 17.1101 17.7676 16.8156 17.7678H3.18648C2.89186 17.7679 2.60072 17.7048 2.33301 17.5831C2.06531 17.4614 1.82737 17.2838 1.63552 17.0626C1.44366 16.8413 1.30243 16.5816 1.2215 16.3013C1.14056 16.021 1.12184 15.7267 1.16663 15.4385L2.58165 6.3396C2.65587 5.862 2.90049 5.42649 3.2712 5.11196C3.64191 4.79742 4.1142 4.62466 4.60252 4.62496H15.3996C15.8877 4.6249 16.3598 4.79778 16.7303 5.11229C17.1008 5.4268 17.3452 5.86217 17.4194 6.3396H17.4184Z"
+                                          stroke="black" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="main-header__burger burger-button" type="button">
+                        <span class="visually-hidden">Открыть меню</span>
+                    </button>
+                </div>
+            </header>
+            <main class="page__main main-content">
+                <div class="main-content__container container">
+                    <ul class="main-content__breadcrumbs breadcrumbs">
+                        <li class="breadcrumbs__item">
+                            <a class="breadcrumbs__link" href="#">Главная</a>
+                        </li>
+                        <li class="breadcrumbs__item">
+                            <a class="breadcrumbs__link breadcrumbs__link--current">Оформление заказа</a>
+                        </li>
+                    </ul>
+                    <form class="main-content__form basket" id="page-form" method="post"
+                          action="https://echo.htmlacademy.ru/">
+                        <div class="basket__title-wrapper">
+                            <h1 class="basket__title">Оформление заказа</h1>
+                            <span class="basket__account-question">Есть аккаунт?<a href="#">Войти</a></span>
+                        </div>
+                        <div class="basket__container" id="main-basket-info">
+                            <h2 class="basket__info-title"><span id="basket-item-count">3</span> товара на сумму <span id="basket-total">25 000 ₽</span></h2>
+                            <ul class="basket__user-purchases user-purchases">
+                                <li class="user-purchases__item purchase-item">
+                                    <div class="purchase-item__main-info">
+                                        <picture>
+                                            <source media="(min-width: 768px)" srcset="assets/img/content/jacket--desktop.jpg, assets/img/content/jacket--desktop@2x.jpg 2x">
+                                            <img src="assets/img/content/jacket--mobile.jpg" srcset="assets/img/content/jacket--mobile@2x.jpg 2x" alt="Куртка стеганая">
+                                        </picture>
+                                        <h3 class="purchase-item__title">Утепленная стеганная куртка женская Top Hills</h3>
+                                        <span class="purchase-item__spec purchase-item__vendor">
+                                            <span class="purchase-item__key">Артикул</span>
+                                            <span class="purchase-item__value">512-05</span></span>
+                                        <span class="purchase-item__spec purchase-item__season">
+                                            <span class="purchase-item__key">Сезон</span>
+                                            <span class="purchase-item__value">Осень-зима</span>
+                                        </span>
+                                        <ul class="purchase-item__size-list size-list">
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="jacket-size" value="xs">
+                                                    <span class="size-list__button">XS</span>
+                                                </label>
+                                            </li>
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="jacket-size" value="s">
+                                                    <span class="size-list__button">S</span>
+                                                </label>
+                                            </li>
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="jacket-size" value="m" checked>
+                                                    <span class="size-list__button">M</span>
+                                                </label>
+                                            </li>
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="jacket-size" value="l">
+                                                    <span class="size-list__button">L</span>
+                                                </label>
+                                            </li>
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="jacket-size" value="xl">
+                                                    <span class="size-list__button">XL</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <ul class="purchase-item__color-list color-list">
+                                            <li class="color-list__item">
+                                                <label class="color-list__label-button">
+                                                    <input class="color-list__radio-button visually-hidden" type="radio" name="jacket-color" value="black" checked>
+                                                    <span class="color-list__button color-list__button--black"></span>
+                                                </label>
+                                            </li>
+                                            <li class="color-list__item">
+                                                <label class="color-list__label-button">
+                                                    <input class="color-list__radio-button visually-hidden" type="radio" name="jacket-color" value="blue">
+                                                    <span class="color-list__button color-list__button--blue"></span>
+                                                </label>
+                                            </li>
+                                            <li class="color-list__item">
+                                                <label class="color-list__label-button">
+                                                    <input class="color-list__radio-button visually-hidden" type="radio" name="jacket-color" value="brown">
+                                                    <span class="color-list__button color-list__button--brown"></span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="purchase-item__price-wrapper">
+                                        <span class="purchase-item__item-price"
+                                              data-old-price="12 000 ₽">10 000 ₽</span>
+                                        <div class="purchase-item__quantity">
+                                            <button class="purchase-item__quantity-button purchase-item__quantity-button--minus" type="button">
+                                            </button>
+                                            <label>
+                                                <input type="number" value="2" min="1" readonly name="item-count">
+                                            </label>
+                                            <button class="purchase-item__quantity-button purchase-item__quantity-button--plus" type="button">
+                                            </button>
+                                        </div>
+                                        <span class="purchase-item__total-price" data-old-total="24 000 ₽">20&nbsp;000&nbsp;₽</span>
+                                    </div>
+                                    <button class="purchase-item__item-delete delete-button" type="button">
+                                        <span class="visually-hidden">Закрыть</span>
+                                    </button>
+                                </li>
+                                <li class="user-purchases__item purchase-item">
+                                    <div class="purchase-item__main-info">
+                                        <picture>
+                                            <source media="(min-width: 768px)" srcset="assets/img/content/beanie-hat--desktop.jpg, assets/img/content/beanie-hat--desktop@2x.jpg 2x">
+                                            <img src="assets/img/content/beanie-hat--mobile.jpg" srcset="assets/img/content/beanie-hat--mobile@2x.jpg 2x" alt="Шапка Zolla">
+                                        </picture>
+                                        <h3 class="purchase-item__title">Вязанная шапка Zolla</h3>
+                                        <span class="purchase-item__spec purchase-item__vendor">
+                                            <span class="purchase-item__key">Артикул</span>
+                                            <span class="purchase-item__value">891-256</span>
+                                        </span>
+                                        <span class="purchase-item__spec purchase-item__season">
+                                            <span class="purchase-item__key">Сезон</span>
+                                            <span class="purchase-item__value">Демисезон</span>
+                                        </span>
+                                        <ul class="purchase-item__size-list size-list">
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="wool-hat-size" value="xs">
+                                                    <span class="size-list__button">XS</span>
+                                                </label>
+                                            </li>
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="wool-hat-size" value="s" checked>
+                                                    <span class="size-list__button">S</span>
+                                                </label>
+                                            </li>
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="wool-hat-size" value="m">
+                                                    <span class="size-list__button">M</span>
+                                                </label>
+                                            </li>
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="wool-hat-size" value="l">
+                                                    <span class="size-list__button">L</span>
+                                                </label>
+                                            </li>
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="wool-hat-size" value="xl">
+                                                    <span class="size-list__button">XL</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <ul class="purchase-item__color-list color-list">
+                                            <li class="color-list__item">
+                                                <label class="color-list__label-button">
+                                                    <input class="color-list__radio-button visually-hidden" type="radio" name="wool-hat-color" value="black" checked>
+                                                    <span class="color-list__button color-list__button--black"></span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="purchase-item__price-wrapper">
+                                        <span class="purchase-item__item-price">500 ₽</span>
+                                        <div class="purchase-item__quantity">
+                                            <button class="purchase-item__quantity-button purchase-item__quantity-button--minus" type="button">
+                                            </button>
+                                            <label>
+                                                <input type="number" value="1" min="1" readonly name="item-count">
+                                            </label>
+                                            <button class="purchase-item__quantity-button purchase-item__quantity-button--plus" type="button">
+                                            </button>
+                                        </div>
+                                        <span class="purchase-item__total-price">500 ₽</span>
+                                    </div>
+                                    <button class="purchase-item__item-delete delete-button" type="button">
+                                        <span class="visually-hidden">Закрыть</span>
+                                    </button>
+                                </li>
+                                <li class="user-purchases__item purchase-item">
+                                    <div class="purchase-item__main-info">
+                                        <picture>
+                                            <source media="(min-width: 768px)" srcset="assets/img/content/beanie-hat--desktop.jpg, assets/img/content/beanie-hat--desktop@2x.jpg 2x">
+                                            <img src="assets/img/content/beanie-hat--mobile.jpg" srcset="assets/img/content/beanie-hat--mobile@2x.jpg 2x" alt="Шапка Zolla">
+                                        </picture>
+                                        <h3 class="purchase-item__title">Вязанная шапка Zolla</h3>
+                                        <span class="purchase-item__spec purchase-item__vendor">
+                                            <span class="purchase-item__key">Артикул</span>
+                                            <span class="purchase-item__value">891-256</span>
+                                        </span>
+                                        <span class="purchase-item__spec purchase-item__season">
+                                            <span class="purchase-item__key">Сезон</span>
+                                            <span class="purchase-item__value">Демисезон</span>
+                                        </span>
+                                        <ul class="purchase-item__size-list size-list">
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="beanie-hat-size" value="xs">
+                                                    <span class="size-list__button">XS</span>
+                                                </label>
+                                            </li>
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="beanie-hat-size" value="s" checked>
+                                                    <span class="size-list__button">S</span>
+                                                </label>
+                                            </li>
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="beanie-hat-size" value="m">
+                                                    <span class="size-list__button">M</span>
+                                                </label>
+                                            </li>
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="beanie-hat-size" value="l">
+                                                    <span class="size-list__button">L</span>
+                                                </label>
+                                            </li>
+                                            <li class="size-list__item">
+                                                <label class="size-list__label-button">
+                                                    <input class="size-list__radio-button visually-hidden" type="radio" name="beanie-hat-size" value="xl">
+                                                    <span class="size-list__button">XL</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <ul class="purchase-item__color-list color-list">
+                                            <li class="color-list__item">
+                                                <label class="color-list__label-button">
+                                                    <input class="color-list__radio-button visually-hidden" type="radio" name="beanie-hat-color" value="black" checked>
+                                                    <span class="color-list__button color-list__button--black"></span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="purchase-item__price-wrapper">
+                                        <span class="purchase-item__item-price">500 ₽</span>
+                                        <div class="purchase-item__quantity">
+                                            <button class="purchase-item__quantity-button purchase-item__quantity-button--minus" type="button">
+                                            </button>
+                                            <label>
+                                                <input type="number" value="1" min="1" readonly name="item-count">
+                                            </label>
+                                            <button class="purchase-item__quantity-button purchase-item__quantity-button--plus" type="button">
+                                            </button>
+                                        </div>
+                                        <span class="purchase-item__total-price">500 ₽</span>
+                                    </div>
+                                    <button class="purchase-item__item-delete delete-button" type="button">
+                                        <span class="visually-hidden">Закрыть</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="basket__container user-contacts">
+                            <h2 class="user-contacts__title">Контактные данные</h2>
+                            <label>
+                                <input class="user-contacts__input" type="text" placeholder="Имя" value="Александр" name="user-name" id="user-name" required>
+                                <span>Имя</span>
+                            </label>
+                            <label>
+                                <input class="user-contacts__input" type="text" placeholder="Фамилия" name="user-surname" id="user-surname" required>
+                                <span>Фамилия</span>
+                            </label>
+                            <label>
+                                <input class="user-contacts__input" type="text" placeholder="Телефон" name="user-phone" id="user-phone" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{9,10}$" required>
+                                <span>Телефон</span>
+                            </label>
+                            <label>
+                                <input class="user-contacts__input" type="email" placeholder="Email" name="user-email" id="user-email" required>
+                                <span>Email</span>
+                            </label>
+                            <label>
+                                <textarea class="user-contacts__input user-contacts__input--address" placeholder="Адрес доставки" name="user-address" id="delivery-address" autocomplete="off" required>г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152</textarea>
+                                <span>Адрес доставки</span>
+                            </label>
+                        </div>
+                        <div class="basket__container payment">
+                            <h2 class="payment__title">Оплата</h2>
+                            <ul class="payment__list payment-list">
+                                <li class="payment-list__item">
+                                    <label class="payment-list__label">
+                                        <input class="visually-hidden" type="radio" value="cash-courier" name="pay-method" checked>
+                                        <span class="payment-list__radio-sign"></span>
+                                        <span class="payment-list__sign">Наличными курьеру</span>
+                                    </label>
+                                </li>
+                                <li class="payment-list__item">
+                                    <label class="payment-list__label">
+                                        <input class="visually-hidden" type="radio" value="card-courier" name="pay-method">
+                                        <span class="payment-list__radio-sign"></span>
+                                        <span class="payment-list__sign">Картой курьеру</span>
+                                    </label>
+                                </li>
+                                <li class="payment-list__item">
+                                    <label class="payment-list__label">
+                                        <input class="visually-hidden" type="radio" value="card-online" name="pay-method">
+                                        <span class="payment-list__radio-sign"></span>
+                                        <span class="payment-list__sign">Картой онлайн</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="basket__container order-comment">
+                            <h2 class="order-comment__title">Комментарии к заказу</h2>
+                            <label>
+                                <textarea placeholder="Комментарии к заказу" rows="6" id="user-comment" name="order-comment" maxlength="142"></textarea>
+                            </label>
+                            <span class="order-comment__used-symbols" id="symbol-counter">Использовано 0/142 символов</span>
+                        </div>
+                        <div class="basket__container overall">
+                            <ul class="overall__list overall-list">
+                                <li class="overall-list__item">
+                                    <span class="overall-list__item-key">Товары</span>
+                                    <span class="overall-list__item-value" id="gross-value">24 500 ₽</span>
+                                </li>
+                                <li class="overall-list__item overall-list__item--discount overall-list__item--discount-main">
+                                    <span class="overall-list__item-key">Скидка</span>
+                                    <span class="overall-list__item-value" id="discount-value">- 4 500 ₽</span>
+                                </li>
+                                <li class="overall-list__item overall-list__item--discount">
+                                    <span class="overall-list__item-key">Акции</span>
+                                    <span class="overall-list__item-value" id="promo-value">- 4 000 ₽</span>
+                                </li>
+                                <li class="overall-list__item overall-list__item--discount">
+                                    <span class="overall-list__item-key">Промокод</span>
+                                    <span class="overall-list__item-value" id="promo-code-value">- 500 ₽</span>
+                                </li>
+                                <li class="overall-list__item">
+                                    <span class="overall-list__item-key">Доставка</span>
+                                    <span class="overall-list__item-value" id="delivery-price">200 ₽</span>
+                                </li>
+                            </ul>
+                            <label class="overall__confirmation">
+                                <span class="overall__description">Получить товар со склада</span>
+                                <span class="overall__warning">Сроки получения могут измениться</span>
+                                <input class="visually-hidden" type="checkbox" name="get-from-storage" id="storage-method">
+                                <span class="overall__confirmation-check-sign"></span>
+                            </label>
+                            <div class="overall__total total-price">
+                                <span class="total-price__key">Итого:</span>
+                                <span class="total-price__value" id="total-price">20 700 ₽</span>
+                            </div>
+                            <label class="overall__promocode">
+                                <input type="text" placeholder="Введите промокод" name="promo-code" maxlength="8" id="promo-field">
+                            </label>
+                            <button class="overall__button button" type="submit">Оформить заказ</button>
+                            <p class="overall__notation">Нажимая кнопку “Оформить заказ”, Вы соглашаетесь с
+                                <a href="#">политикой конфиденциальности.</a>
+                            </p>
+                        </div>
+                        <div class="basket__container destination-map" id="map"></div>
+                    </form>
+                    <img class="visually-hidden" src="assets/img/icons/icon-map-pin.svg" width="27" height="39" alt="Пин карты">
+                </div>
+            </main>
+        </div>
+        <!-- Layout patterns -->
+        <!-- Интерактивный шаблон для восстановления товара в корзине -->
+        <template id="item-delete-message">
+            <div class="purchase-item__delete-wrapper delete-message">
+                <span class="delete-message__warning">Товар <span
+                        class="delete-message__item-name">Наименование товара</span> был удален из корзины.</span>
+                <button class="delete-message__recovery-button" type="button">Восстановить</button>
+                <button class="delete-message__delete-button delete-button" type="button">
+                    <span class="visually-hidden">Закрыть</span>
+                </button>
+            </div>
+        </template>
+        <!-- Шаблон сообщения о пустой корзине -->
+        <template id="empty-basket-message">
+            <li class="user-purchases__item purchase-item purchase-item--empty-basket">
+                <span class="purchase-item__inner-content">Корзина пуста</span>
+            </li>
+        </template>
+        <!-- Шаблон сообщения успешного заказа -->
+        <template id="order-success-message">
+            <div class="success-message">
+                <span class="success-message__inner-content">Заказ успешно оформлен и уже готовится к&nbsp;отправлению!</span>
+            </div>
+        </template>
+        <!-- Patterns -->
+    </body>
+</html>

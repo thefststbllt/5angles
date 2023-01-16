@@ -1,0 +1,64 @@
+.delete-message {
+  font-size: 1rem;
+  line-height: 1.3em;
+  color: $color-dark-grey;
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  background-color: $color-light-grey;
+  width: calc(100% - 23px);
+  min-height: 50px;
+  padding: 3px 25px 0;
+
+  @media (max-width: $vp-mobile) {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    padding: 17px 8px 10px;
+    width: calc(100% - 16px);
+  }
+}
+
+.delete-message__warning {
+  @include fix-text(415px);
+
+  @media (max-width: $vp-mobile) {
+    font-size: 0.875rem;
+    line-height: 1.28em;
+    margin: 0 0 4px;
+  }
+}
+
+.delete-message__item-name {
+  font-weight: 700;
+}
+
+.delete-message__recovery-button{
+  font-size: 0.88rem;
+  line-height: 1.3em;
+  padding: 0;
+  margin: 0 0 0 25px;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    transition: .3s all;
+    color: $color-success-green;
+  }
+
+  @media (max-width: $vp-mobile) {
+    width: min-content;
+    order: 1;
+    margin: 0;
+  }
+}
+
+.delete-message__delete-button {
+  margin-left: auto;
+  position: relative;
+  background-color: transparent;
+
+  @media (max-width: $vp-mobile) {
+    align-self: start;
+    margin: -4px 0 0;
+  }
+}

@@ -1,0 +1,14 @@
+.user-purchases {
+
+  @media (max-width: $vp-mobile) {
+    min-height: auto;
+  }
+}
+
+.user-purchases__item {
+  border-top: 0.5px solid $color-grey;
+
+  &:last-child {
+    border-bottom: 0.5px solid $color-grey;
+  }
+}

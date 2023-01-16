@@ -1,0 +1,200 @@
+.overall {
+  width: 360px;
+  border: 1px solid $color-dark-grey;
+  background-color: $color-basic-white;
+  padding: 28px 20px 30px;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+
+  @media (max-width: $vp-tablet) {
+    position: static;
+    width: auto;
+    order: 3;
+    margin: 40px 0 0;
+  }
+
+  @media (max-width: $vp-mobile) {
+    width: auto;
+    margin: 37px 0 0;
+    padding: 24px 16px 22px;
+  }
+}
+
+.overall__confirmation {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  border-top: 1px solid $color-grey;
+  border-bottom: 1px solid $color-grey;
+  padding: 20px 0 18px;
+  cursor: pointer;
+
+  input[type=checkbox] + span {
+    transition: .3s all;
+  }
+
+  input[type=checkbox]:checked + span {
+    transition: .3s all;
+
+    &::before {
+      transform: translateX(27px);
+      background-color: $color-basic-black;
+    }
+  }
+
+  &:has(input:disabled),
+  input:disabled + span {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  input:focus-visible + .overall__confirmation-check-sign::before {
+    outline: 2px solid royalblue;
+  }
+
+  @media (max-width: $vp-mobile) {
+    padding: 12px 0 10px;
+    row-gap: 4px;
+  }
+}
+
+.overall__description {
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 8px;
+  width: max-content;
+
+  @media (max-width: $vp-mobile) {
+    font-size: 1rem;
+    line-height: 1.3em;
+    @include fix-text(200px);
+  }
+}
+
+.overall__promocode {
+  position: relative;
+
+  input {
+    width: calc(100% - 40px);
+    padding: 17px 19px 13px;
+    border: 1px solid $color-grey;
+    margin: 0 0 20px;
+
+    @include hover-effect;
+
+    &:hover {
+      border-color: $color-dark-grey;
+    }
+  }
+
+  &::after {
+    content: attr(data-promo-status);
+    display: block;
+    width: calc(100% - 16px);
+    max-width: 100%;
+    color: $color-success-green;
+    font-size: 0.75rem;
+    line-height: 1.25em;
+    position: absolute;
+    top: 38px;
+    left: 16px;
+  }
+
+  input:disabled {
+    border: 1px solid $color-grey;
+    box-shadow: none;
+  }
+
+  &--wrong-code,
+  &--wrong-code:hover {
+    input {
+      border-color: $color-error-red;
+    }
+
+    &::after {
+      color: $color-error-red;
+    }
+  }
+
+  @media (max-width: $vp-mobile) {
+    input {
+      width: calc(100% - 30px);
+      padding: 14px 15px 11px;
+      margin: 0 0 12px;
+    }
+
+    &::after {
+      font-size: 0.5rem;
+      min-width: 240px;
+      height: 15px;
+      top: 32px;
+      left: 5px;
+    }
+  }
+}
+
+.overall__confirmation-check-sign {
+  min-width: 34px;
+  height: 14px;
+  border-radius: 10px;
+  margin: auto 0;
+  grid-area: 1/2/3/3;
+  background-color: $color-grey;
+  position: relative;
+  top: -7px;
+
+  &::before {
+    @include pseudoel;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: $color-dark-grey;
+    position: absolute;
+    left: -7px;
+    top: calc(50% - 11px);
+    transition: .3s all;
+  }
+
+  @media (max-width: $vp-mobile) {
+    top: -8px;
+  }
+}
+
+.overall__button {
+  width: 100%;
+}
+
+.overall__notation {
+  color: $color-dark-grey;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  margin: 10px 0 0;
+
+  a {
+    color: $color-dark-grey;
+    transition: .3s all;
+
+    &:hover {
+      color: $color-basic-black;
+      transition: .3s all;
+    }
+  }
+
+  @media (max-width: $vp-mobile) {
+    margin: 11px 0 0;
+  }
+}
+
+.overall__warning {
+  color: $color-dark-grey;
+  font-size: 0.75rem;
+  line-height: 1.25em;
+  width: max-content;
+
+  @media (max-width: $vp-mobile) {
+    @include fix-text(210px);
+  }
+}

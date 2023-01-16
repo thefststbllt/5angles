@@ -1,0 +1,107 @@
+.payment-list__item {
+  margin: 0 0 0 32px;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 22px;
+  }
+
+  @media (max-width: $vp-mobile) {
+    &:not(:last-child) {
+      margin-bottom: 21px;
+    }
+  }
+}
+
+.payment-list__label {
+  cursor: pointer;
+  transition: .3s all;
+
+  .payment-list__sign {
+    user-select: none;
+  }
+}
+
+.payment-list__label input {
+  transition: .3s all;
+
+  &:hover {
+    & ~ .payment-list__radio-sign {
+      border-color: $color-grey;
+      transition: .3s all;
+    }
+
+    & ~ .payment-list__sign {
+      color: $color-dark-grey;
+      transition: .3s all;
+    }
+  }
+
+  &:focus-visible + .payment-list__radio-sign {
+    outline: 2px solid royalblue;
+  };
+
+  & + .payment-list__radio-sign {
+    &::before {
+      transition: .3s all;
+    }
+  }
+}
+
+.payment-list__label input:checked {
+  transition: .3s all;
+
+  & + .payment-list__radio-sign {
+    &::before {
+      @include pseudoel;
+      width: 12px;
+      height: 12px;
+      background-color: $color-basic-black;
+      border-radius: 50%;
+      position: absolute;
+      top: calc(50% - 6px);
+      left: calc(50% - 6px);
+      transition: .3s all;
+    }
+  }
+}
+
+.payment-list__label:has(input:disabled) {
+  cursor: default;
+
+  .payment-list__radio-sign {
+    opacity: 0.5;
+    border-color: $color-dark-grey;
+  }
+
+  .payment-list__sign {
+    color: $color-grey;
+  }
+}
+
+.payment-list__label:hover {
+  &:has(input:disabled) {
+    .payment-list__radio-sign {
+      border-color: $color-dark-grey;
+    }
+
+    .payment-list__sign {
+      color: $color-grey;
+    }
+  }
+}
+
+.payment-list__radio-sign {
+  width: 20px;
+  height: 20px;
+  border: 1px solid $color-dark-grey;
+  border-radius: 50%;
+  position: absolute;
+  left: -32px;
+  top: -2px;
+  transition: .3s all;
+
+  @media (max-width: $vp-mobile) {
+    top: -2px;
+  }
+}

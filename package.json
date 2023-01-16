@@ -1,0 +1,52 @@
+{
+  "name": "test-page",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "Project by Belockopytov Paul",
+  "homepage": "https://thefststbllt.github.io/5angles/",
+  "main": "build/main.js",
+  "browserslist": [
+    "last 2 years",
+    "> 1%",
+    "not dead"
+  ],
+  "scripts": {
+    "start": "set NODE_ENV=development&&webpack serve --hot",
+    "build": "set NODE_ENV=development&&webpack",
+    "build-prod": "set NODE_ENV=production&&webpack",
+    "clean": "rd /s /q build"
+  },
+  "author": "Belockopytov Paul",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.2",
+    "gh-pages": "^4.0.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.1.1",
+    "image-webpack-loader": "^8.1.0",
+    "mini-css-extract-plugin": "^2.7.0",
+    "node-sass": "^8.0.0",
+    "postcss": "^8.4.19",
+    "postcss-loader": "^7.0.1",
+    "postcss-preset-env": "^7.8.3",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "svg-sprite-loader": "^6.0.11",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "imask": "^6.4.3"
+  }
+}

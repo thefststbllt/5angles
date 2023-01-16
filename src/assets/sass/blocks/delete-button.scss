@@ -1,0 +1,40 @@
+.delete-button {
+  width: 22px;
+  height: 22px;
+  background-color: $color-basic-white;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    &::before,
+    &::after {
+      transition: .3s all;
+      background-color: $color-dark-grey;
+    }
+  }
+
+  &::before,
+  &::after {
+    transition: .3s all;
+    @include pseudoel;
+    width: 18px;
+    height: 1.5px;
+    background-color: $color-basic-black;
+    position: absolute;
+    top: calc(50% - 1.5px);
+    left: calc(50% - 9px);
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:disabled {
+    @include hover-effect-disabled;
+    @include disabled-effect;
+  }
+}
